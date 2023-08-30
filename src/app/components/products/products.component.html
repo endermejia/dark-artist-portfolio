@@ -1,0 +1,49 @@
+<section class="main-section container">
+  <pre></pre>
+  <article>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let product of products">
+        <div class="center-div mb-4" [style.flex-direction]="'column'">
+          <img [src]="product.icon"
+               [alt]="product.name"
+               class="img-fluid mb-3">
+          <h4>{{product.price | currency:'EUR'}}</h4>
+          <h4>{{product.name}}</h4>
+          <div class="center-div w-100">
+            <div class="w-100 mr-2">
+              <select class="form-control"
+                      [disabled]="cartService.soldOutProduct(product)"
+                      (change)="product.selectedSize = $event.target.value"
+                      [value]="product.selectedSize">
+                <option *ngFor="let size of cartService.stockSizes(product)">
+                  {{size}}
+                </option>
+              </select>
+            </div>
+            <div class="w-100 ml-2">
+              <select class="form-control"
+                      [disabled]="!cartService.stockQuantities(product).length"
+                      (change)="product.selectedQuantity = $event.target.value"
+                      [value]="product.selectedQuantity">
+                <option *ngFor="let quantity of cartService.stockQuantities(product)">
+                  {{quantity}}
+                </option>
+                <option *ngIf="!cartService.stockQuantities(product).length">
+                  SOLD OUT
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="m-3 center-div w-100">
+            <button class="btn btn-dark w-100"
+                    [disabled]="!cartService.stockQuantities(product).length"
+                    (click)="cartService.add(product, product.selectedSize, product.selectedQuantity); product.selectedQuantity = 1">
+              COMPRAR
+            </button>
+          </div>
+        </div>
+        <hr class="badge-dark">
+      </div>
+    </div>
+  </article>
+</section>

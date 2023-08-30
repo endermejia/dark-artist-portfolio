@@ -1,0 +1,25 @@
+<nav class="navbar navbar-dark">
+  <div class="container">
+    <div class="center-div" [style.flex-direction]="'column'" [style.width.%]="100">
+      <div class="navbar-nav center-div" [style.flex-direction]="'row'">
+        <li class="nav-item m-2 m-sm-3">
+          <a class="nav-link" routerLinkActive="active" routerLink="/products">PRODUCTOS</a>
+        </li>
+        <li class="nav-item m-2 m-sm-3">
+          <a class="nav-link" routerLinkActive="active" routerLink="/contact">CONTACTO</a>
+        </li>
+        <li class="nav-item m-2 m-sm-3">
+          <a class="nav-link" routerLinkActive="active" routerLink="/cart">
+            <div class="center-div">
+              CARRITO
+              <div *ngIf="cartService.totalItems > 0"
+                   class="badge badge-pill badge-danger ml-2">
+                {{cartService.totalItems}}
+              </div>
+            </div>
+          </a>
+        </li>
+      </div>
+    </div>
+  </div>
+</nav>

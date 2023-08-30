@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<section class="footer">
+	<div class="footer-icons">
+		<ng-container *ngFor="let item of contact.items">
+			<a class="footer-icon"
+			   href="{{item.link}}"
+			   target="_blank"
+			   title="{{item.name}}"
+			   itemprop="significantLink">
+				<i class="fa fa-{{item.icon}}"></i>
+			</a>
+		</ng-container>
+	</div>
+	<span class="mb-2">© {{year}} Copyright: {{profile.name}}</span>
+</section>

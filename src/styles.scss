@@ -1,0 +1,111 @@
+/* You can add global styles to this file, and also import other style files */
+.center-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.align-div {
+  display: flex;
+  align-items: center;
+}
+
+.main-section {
+  padding: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: #dc3545;
+
+  &:hover {
+    color: #dc3545;
+  }
+}
+
+p {
+  text-align: justify;
+}
+
+#contact {
+  padding-bottom: 1em;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.form-control {
+  border-radius: 0;
+  color: white;
+  background-color: black;
+
+  &:focus {
+    color: white;
+    background-color: black;
+    border-color: white;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    background-color: inherit;
+  }
+}
+
+body {
+  font-size: 1.2em;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.bg-dark {
+  background-color: black !important;
+}
+
+.btn-dark {
+  color: white;
+  background-color: black;
+  border-color: white;
+
+  &:disabled {
+    opacity: 0.5;
+    text-decoration: line-through;
+    color: white;
+    background-color: black;
+    border-color: white;
+  }
+
+  &:hover {
+    color: white;
+    background-color: black;
+    border-color: white;
+  }
+
+  &:focus {
+    color: white;
+    background-color: black;
+    border-color: white;
+  }
+
+  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled):not(.disabled):active,
+  .show > &.dropdown-toggle {
+    color: black;
+    background-color: white;
+    border-color: black;
+  }
+}
+
+.badge-danger {
+  color: #dc3545;
+  border: 2px solid #dc3545;
+  background-color: transparent;
+  margin-bottom: 0.25em;
+}
+
+.nav-link.active {
+  color: #dc3545 !important;
+}
+
+.modal-content {
+  border-radius: 0;
+}

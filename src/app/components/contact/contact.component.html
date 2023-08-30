@@ -1,0 +1,70 @@
+<section class="main-section container">
+  <article>
+    <div>
+      <div *ngIf="profile.description.show">
+        <h2>{{profile.description.title}}</h2>
+        <p *ngFor="let paragraph of profile.description.paragraphs"
+           [innerHTML]="paragraph">
+        </p>
+      </div>
+    </div>
+  </article>
+  <article>
+    <div *ngIf="contactInfo.show">
+      <h2>{{contactInfo.title}}</h2>
+      <form>
+        <fieldset>
+          <div class="form-row">
+            <div class="form-group col-lg-6">
+              <label for="inputName">{{contactInfo.name}}</label>
+              <input
+                id="inputName"
+                class="form-control"
+                type="text"
+                name="Name"
+                [placeholder]="contactInfo.namePlaceholder"
+                required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-lg-6">
+              <label for="inputEmail">{{contactInfo.email}}</label>
+              <input
+                id="inputEmail"
+                class="form-control"
+                type="email"
+                name="Email"
+                [placeholder]="contactInfo.emailPlaceholder"
+                required>
+            </div>
+            <div class="form-group col-lg-6">
+              <label for="inputTelephone">{{contactInfo.phone}}</label>
+              <input
+                id="inputTelephone"
+                class="form-control"
+                type="tel"
+                name="Phone"
+                [placeholder]="contactInfo.phonePlaceholder"
+                required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="messageTextArea">{{contactInfo.message}}</label>
+            <textarea
+              id="messageTextArea"
+              class="form-control"
+              rows="3"
+              name="Message"
+              [placeholder]="contactInfo.messagePlaceholder"
+              required></textarea>
+          </div>
+          <button
+            (click)="sendMessage()"
+            class="btn btn-dark mb-2">
+            {{contactInfo.sendButton}}
+          </button>
+        </fieldset>
+      </form>
+    </div>
+  </article>
+</section>

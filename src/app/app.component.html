@@ -1,0 +1,20 @@
+<div [style.display]="'flex'" [style.flex-direction]="'column'">
+  <header class="sticky-top bg-dark">
+    <app-navbar></app-navbar>
+  </header>
+  <section>
+    <div class="center-div container">
+      <div [style.max-width.px]="500" class="center-div">
+        <img [src]="profile.image"
+             [alt]="profile.name"
+             [style.width]="'inherit'"
+             class="img-fluid">
+      </div>
+    </div>
+    <app-dialog></app-dialog>
+    <router-outlet></router-outlet>
+  </section>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</div>
